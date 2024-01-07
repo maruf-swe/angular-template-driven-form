@@ -2,9 +2,39 @@
   <h2 id="registration">Registration Form</h2>
   <form>
     <label for="fname">First Name</label>
-    <input type="text" id="fname" placeholder="Your Name..">
+    <input type="text" id="fname" placeholder="Your first Name..">
     
     <label for="lname">Name</label>
+    <input type="text" id="lname" placeholder="Your Last Name..">
 
+    <label for="email">Email</label>
+    <input type="text" id="email" placeholder="Email">
+
+    <label for="country">Country</label>
+    <select id="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+      <option value="india">India</option>
+      <option value="uk">UK</option>
+    </select>
+
+    <label for="gender">Gender</label>
+    <input type="radio" id="male" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" value="other" checked>
+    <label for="other">Other</label>
+    <br><br>
+
+    <label>Hobbies <i>(optional)</i></label>
+    <div class="form-inline">
+      <label><input type="checkbox" value="sprots">Sports</label>
+      <label><input type="checkbox" value="movies">Movies</label>
+      <label><input type="checkbox" value="sprots">Music</label>
+    </div>
+
+    <input type="submit" value="Submit" id="btn">
   </form>
 </div>
