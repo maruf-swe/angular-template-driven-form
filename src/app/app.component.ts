@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
@@ -12,8 +12,9 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   title = 'angular-template-driven-form';
+  @ViewChild('myForm') form: NgForm;
 
-  onSubmit(form: NgForm){
-    console.log(form);
+  onSubmit(){
+    console.log(this.form);
   }
 }
