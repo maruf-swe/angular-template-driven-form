@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   title = 'angular-template-driven-form';
-  @ViewChild('myForm') form: NgForm;
+  @ViewChild('myForm') form!: NgForm;
 
   onSubmit(){
     console.log(this.form);
