@@ -12,6 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   title = 'angular-template-driven-form';
+  defaultCountry = 'india';
   @ViewChild('myForm') form!: NgForm;
 
   onSubmit(){
