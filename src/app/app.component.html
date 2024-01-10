@@ -1,20 +1,19 @@
 <div class="form">
   <h2 id="registration">Registration Form</h2>
   <form (ngSubmit)="onSubmit()" #myForm="ngForm"> 
-    <div ngModelGroup="personDetails">
+    <div ngModelGroup="personDetails" #personDetail="ngModelGroup">
       <label for="fname">First Name</label>11
       <input type="text" id="fname" placeholder="Your first Name.." 
           name="firstname" ngModel required #fname="ngModel">
-      <div>
-        <small *ngIf="fname.invalid && fname.touched">First name is Required</small>
-      </div>
     
       <label for="lname">Name</label>
       <input type="text" id="lname" placeholder="Your Last Name.." name="lastname" ngModel required>
 
       <label for="email">Email</label>
       <input type="text" id="email" placeholder="Email" name="email" ngModel required email>
-      
+      <div>
+        <small *ngIf="personDetail.invalid && personDetail.touched">Some of The required fileds does not have valid value</small>
+      </div>
     </div>
     
     <label for="country">Country</label>
