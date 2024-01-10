@@ -26,4 +26,21 @@ export class AppComponent {
   onSubmit(){
     console.log(this.form);
   }
+
+  setDefaultValues(){
+    // this.form.value.personDetails.firstname="Marufur";
+    // this.form.value.personDetails.lastname="Rahman";
+    // this.form.value.personDetails.email="maruf12gmail.com";
+    this.form.setValue({
+      country: '',
+      gender: '',
+      hobbies: '',
+      personDetails: {
+        firstname:'marufur',
+        lastname:'rahman',
+        email:'maruf12@gmail.com'
+      }
+    })
+
+  }
 }
