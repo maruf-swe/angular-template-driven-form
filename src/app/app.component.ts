@@ -42,5 +42,14 @@ export class AppComponent {
       }
     })
 
+    this.form.form.patchValue({
+      personDetails: {
+        firstname:'marufur',
+        lastname:'rahman',
+        email:'maruf12@gmail.com'
+      }
+      
+    })
+
   }
 }
