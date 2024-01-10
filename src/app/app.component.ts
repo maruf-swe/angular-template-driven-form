@@ -14,6 +14,14 @@ export class AppComponent {
   title = 'angular-template-driven-form';
   defaultCountry = 'india';
   defaultGender = 'Male';
+  firstname: any;
+  lastname: any;
+  email: any;
+  gen: any;
+  country: any;
+  hobbies: any;
+
+
   gender = [
     {id: '1', value: 'male'},
     {id: '2', value: 'Female'},
@@ -25,6 +33,14 @@ export class AppComponent {
 
   onSubmit(){
     console.log(this.form);
+    this.firstname = this.form.value.personDetails.firstname;
+    this.lastname = this.form.value.personDetails.lastname;
+    this.email = this.form.value.personDetails.email;
+    this.gen = this.form.value.gender;
+    this.country = this.form.value.country;
+    this.hobbies = this.form.value.hobbies;
+    this.form.reset();
+
   }
 
   setDefaultValues(){
