@@ -1,38 +1,34 @@
-import { Component } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+import { FormControl } from '@angular/forms';
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, ReactiveFormsModule, NgIf],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-})
-export class AppComponent {
-  title = 'Reactive Forms';
-  reactiveForm: FormGroup;
+describe('AppComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppComponent],
+    }).compileComponents();
+  });
 
-  ngOnInit(){
-    this.reactiveForm = new FormGroup({
-      firstname: new FormControl(null, Validators.required),  // for more validation visit 
-      lastname: new FormControl(null, Validators.required),   // https://angular.io/api/forms/Validators
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      gender: new FormControl('male'),
-      country: new FormControl('bd'),
-      hobbies: new FormControl(null),
-      skills: new FormArray([
-        new FormControl(null),
-        new FormControl(null),
-        new FormControl(null)
-      ])
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
 
-    });
+  it(`should have the 'angular-reactive-forms' title`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('angular-reactive-forms');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-reactive-forms');
+  });
+
+  addSkils(){
+    this.reactiveForm.get('skill;').push(new FormControl(null));
   }
-
-  onSubmit(){
-    console.log(this.reactiveForm)
-
-  }
-}
+});
